@@ -9,20 +9,27 @@ export default function App() {
 	return (
 		<div className='app'>
 			<h1>Application</h1>
-			<Parent>
-				<Child name='Nicolas' />
-				<Child name='David' />
-			</Parent>
+			<Parent />
 		</div>
 	)
 }
 
-function Parent({ children }: { children: React.ReactNode }) {
+function Parent() {
+	const [nameOne, setNameOne] = useState('Nicolas')
+	const [nameTwo, setNameTwo] = useState('David')
 	console.log('Parent rendering')
 	return (
 		<div className='parent'>
 			<h1>Parent</h1>
-			<div className='children'>{children}</div>
+			<div className='inputs'>
+				<input value={nameOne} onChange={(e) => setNameOne(e.target.value)} />
+				<input value={nameTwo} onChange={(e) => setNameTwo(e.target.value)} />
+			</div>
+
+			<div className='children'>
+				<Child name={nameOne} />
+				<Child name={nameTwo} />
+			</div>
 		</div>
 	)
 }
