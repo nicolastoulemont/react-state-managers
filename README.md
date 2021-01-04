@@ -1,6 +1,6 @@
 # React state managers study
 
-Building very basic redux and recoil state manager demo app for learning purposes
+Building very basic redux and recoil state manager demo app for learning and teaching purposes
 
 ## Inspired by
 
